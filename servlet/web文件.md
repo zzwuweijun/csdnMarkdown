@@ -105,9 +105,31 @@ public class MyServlet extends HttpServlet {
 
 在浏览器地址栏中输入：http://localhost:8080/myServlet1/my，即可在页面中打印"hello wirl..."：
 
+![https://raw.githubusercontent.com/zzwuweijun/csdnMarkdown/master/servlet/web/1575126111141.png](https://raw.githubusercontent.com/zzwuweijun/csdnMarkdown/master/servlet/web/1575126111141.png)
+
+![https://raw.githubusercontent.com/zzwuweijun/csdnMarkdown/master/servlet/web/www.JPG](https://raw.githubusercontent.com/zzwuweijun/csdnMarkdown/master/servlet/web/www.JPG)
 
 
-![1575126111141](web%E6%96%87%E4%BB%B6.assets/1575126111141.png)
 
-![33](https://csdnimg.cn/pubfooter/images/job-QR.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
