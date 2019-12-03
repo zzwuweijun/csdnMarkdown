@@ -105,9 +105,51 @@ public class MyServlet extends HttpServlet {
 
 在浏览器地址栏中输入：http://localhost:8080/myServlet1/my，即可在页面中打印"hello wirl..."：
 
+![https://raw.githubusercontent.com/zzwuweijun/csdnMarkdown/master/servlet/web/1575126111141.png](https://raw.githubusercontent.com/zzwuweijun/csdnMarkdown/master/servlet/web/1575126111141.png)
+
+====================
+
+虽然通过上面就能够设置基本的Servlet，但是作为程序员的我们并不能满足于此。
+
+`<servlet>` 标签除了上面的两个子标签外，还有一下子标签：
+
+![1575196949602](web%E6%96%87%E4%BB%B6.assets/1575196949602.png)
+
+下面就单独讲解部分标签的作用：
+
+`<load-on-startup>`： 标记容器是否在启动的时候就加载这个servlet。  当值为0或者大于0时，表示容器在应用启动时就加载这个servlet；  当是一个负数时或者没有指定时，则指示容器在该servlet被选择时才加载。  正数的值越小，启动该servlet的优先级越高。 如果我们在web.xml中设置了多个servlet的时候，可以使用load-on-startup来指定servlet的加载顺序，服务器会根据load-on-startup的大小依次对servlet进行初始化。不过即使我们将<load-on-startup>设置重复也不会出现异常，服务器会自己决定初始化顺序。
+
+`<async-supported>`： 作用是支持异步处理。 
+
+`<description>`： 用于描述servlet的相关信息 
+
+`<display-name>`： servlet的描述性说明文字 
+
+`<init-param>`：用于设置several的初始参数。一个Servlet可以有多个`<init-param>`标签。该标签有三个子标签，`<description></description>`、`<param-name></param-name>`、`<param-value></param-value>`，看名字都能看出是啥意思。。。	在java类中通过 `config.getInitParameter("param-value");`来获取。
+
+`<jsp-file>`： 等同于<servlet-class>一样，只是现在是要用jsp来替代servlet的功能。本质上jsp就是servlet 
+
+`<multipart-config>`：与上传文件有关。
 
 
-![1575126111141](web%E6%96%87%E4%BB%B6.assets/1575126111141.png)
 
-![33](https://csdnimg.cn/pubfooter/images/job-QR.png)
+### 设置error界面
+
+先贴出代码：
+
+```xml
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+	</error-page>
+
+	<error-page>
+		<error-code>405</error-code>
+		<location>/WEB-INF/405.html</location>
+	</error-page>
+```
+
+如果浏览器出现404、405错误，则会调用上面的界面，不会给客户返回一堆代码。。。
+
+
 
