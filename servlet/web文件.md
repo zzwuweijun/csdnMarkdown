@@ -25,6 +25,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
  上面说了web.xml文件的作用，下面就说该文件中的具体设置，也就是各个功能模块要怎么去设置。
 
+web.xml文件有一下的一些组件：。。。
+
+组件的加载顺序：severalContext -> context-param -> listener -> filter -> servlet
+
 ### 设置欢迎页面
 
 每次打开一个应用程序，都应该自动的为用户启动一个默认的欢迎页面（嗯，首页了解一下）。实现方法如下：
@@ -105,7 +109,7 @@ public class MyServlet extends HttpServlet {
 
 在浏览器地址栏中输入：http://localhost:8080/myServlet1/my，即可在页面中打印"hello wirl..."：
 
-![https://raw.githubusercontent.com/zzwuweijun/csdnMarkdown/master/servlet/web/1575126111141.png](https://raw.githubusercontent.com/zzwuweijun/csdnMarkdown/master/servlet/web/1575126111141.png)
+![222222222222](web%E6%96%87%E4%BB%B6.assets/1575126111141.png)
 
 ====================
 
@@ -125,7 +129,7 @@ public class MyServlet extends HttpServlet {
 
 `<display-name>`： servlet的描述性说明文字 
 
-`<init-param>`：用于设置several的初始参数。一个Servlet可以有多个`<init-param>`标签。该标签有三个子标签，`<description></description>`、`<param-name></param-name>`、`<param-value></param-value>`，看名字都能看出是啥意思。。。	在java类中通过 `config.getInitParameter("param-value");`来获取。
+`<init-param>`：用于设置several的初始参数。一个Servlet可以有多个`<init-param>`标签。该标签有三个子标签，`<description></description>`、`<param-name></param-name>`、`<param-value></param-value>`，看名字都能看出是啥意思。。。	在java类中通过 `（ServletConfig）getInitParameter("param-name");`来获取。
 
 `<jsp-file>`： 等同于<servlet-class>一样，只是现在是要用jsp来替代servlet的功能。本质上jsp就是servlet 
 
@@ -151,7 +155,41 @@ public class MyServlet extends HttpServlet {
 
 如果浏览器出现404、405错误，则会调用上面的界面，不会给客户返回一堆代码。。。
 
+----
 
-=======
+### 设置context-param全局数据
+
+-   #### 作用
+
+    实现不同用户之间的数据共享
+
+    -   使静态数据和代码解耦
+
+    
+
+-   #### 实现方式
+
+    ```xml
+    <context-param>
+    	<param-name>name</param-name>
+    	<param-value>全局数据</param-value>
+    </context-param>
+    ```
+
+    有多个数据，就写多个 `<context-param>` 标签。在这里只能写String类型的数据。
+
+    该标签和ServletContext对象相互对应，所有能够使用ServletContext对象来获取到该标签设置的值。
+
+-   #### 获取全局数据
+
+    要有ServletContext对象的实例，再用实例调用 `getInitParameter(String name);` 方法获取全局数据。
+
+---
+
+### 设置listener监听
 
 
+
+---
+
+### 设置filter过滤

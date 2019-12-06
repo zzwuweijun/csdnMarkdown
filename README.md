@@ -3,6 +3,8 @@
 
 
 
+## 所有的文件要改名或是删除，都要通过git老i操作
+
 
 
 如何在csdn中引用github中的图片：
@@ -12,3 +14,4 @@ github中的图片：https://github.com/zzwuweijun/csdnMarkdown/blob/master/serv
 修改成：https://raw.githubusercontent.com/zzwuweijun/csdnMarkdown/master/servlet/web/www.JPG
 
  
+

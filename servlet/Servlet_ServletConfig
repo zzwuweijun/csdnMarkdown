@@ -1,0 +1,28 @@
+### Servlet的ServletConfig对象
+
+问题：
+
+-   使用ServletContext对象可以获取web.xml的全局配置信息，在web.xml中，每个Servlet也可以设置单独的配置，那么该如何获取配置信息？
+
+---
+
+解决：
+
+-   使用ServletConfig对象
+
+---
+
+作用：
+
+-   ServletConfig对象是Servlet的专属配置对象，每个Servlet都单独用于一个ServletConfig对象，用来获取web.xml中的配置信息。
+
+---
+
+使用：
+
+-   在<Servlet>标签中的`<init-param>`标签设置
+
+-   `<init-param>`：用于设置several的初始参数。一个Servlet可以有多个`<init-param>`标签。该标签有三个子标签，`<description></description>`、`<param-name></param-name>`、`<param-value></param-value>`，看名字都能看出是啥意思。。。	在java类中通过 `（ServletConfig）getInitParameter("param-name");`来获取。
+
+---
+

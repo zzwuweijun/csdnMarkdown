@@ -60,6 +60,11 @@
 
     返回所有用户请求数据的枚举集合
 
+### 多个Servlet之间传递数据
+
+-   req.setAttribute(name,value);
+-   req.getAttribute(name);
+
 ### 注意
 
 如果要获取的请求数据不存在，不会报错，返回Null。
