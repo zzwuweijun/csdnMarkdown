@@ -2,22 +2,19 @@
 
 mysql数据驱动下载：[点击这里。。。](https://mvnrepository.com/artifact/mysql/mysql-connector-java)
 
-### 加载驱动
+### 什么是jdbc
 
-![1575470534673](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575470534673.png)
+![1575717230843](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575717230843.png)
 
-### 连接数据库、关闭数据库连接，释放资源
+### 访问数据库流程
 
-![1575470589530](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575470589530.png)
+![1575717280290](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575717280290.png)
 
-### 使用语句操作数据库
+ 
 
-#### 使用Statement接口操作数据库
+### jdbc常用接口
 
-![1575473987489](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575473987489.png)
+![1575717417214](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575717417214.png)![1575717698711](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575717698711.png)![1575717729020](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575717729020.png)![1575718280915](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575718280915.png)![1575728144272](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575728144272.png)![1575728613708](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575728613708.png)![1575730101877](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575730101877.png)![1575730522627](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575730522627.png)![1575731103133](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575731103133.png)![1575731251919](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575731251919.png)![1575732821799](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575732821799.png)
 
-![1575520853186](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575520853186.png)
 
-![1575520861390](jdbc-jdbc%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.assets/1575520861390.png)
 
-​	

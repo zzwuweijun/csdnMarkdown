@@ -1,0 +1,85 @@
+## jsp中的(绝对和相对)路径问题
+
+-   相对路径：
+
+    -   相对路径都是相对当前文件路径而言的，使用麻烦，而且一旦使用，那么与之相关的文件就不能够再更改路径，否则报错。
+
+    -   使用方式：
+
+        -   ```
+            ../
+            ./
+            ```
+
+    ---
+
+-   绝对路径：
+    -   ```html
+        <a href="/myProject/index.jsp">。。</a>
+        --->
+        <a href="/虚拟路径名/资源名或者项目资源路径">。。</a>
+        ```
+
+        在引用路径是，写的第一个 `/` 代表服务器的根路径，相当于本地服务器的 `localhost:8080`.
+
+        
+
+    ---
+
+    -   动态的获取路径：
+        -   先贴出项目结构：
+
+            <img src="jsp%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98(%E7%BB%9D%E5%AF%B9%E5%92%8C%E7%9B%B8%E5%AF%B9).assets/1575644931723.png" alt="1575644931723" style="zoom: 67%;" />
+
+        -   获取绝对路径：
+
+            ```java
+            String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()+request.getContextPath()+request.getServletPath();
+            ```
+
+            ![1575645261924](jsp%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98(%E7%BB%9D%E5%AF%B9%E5%92%8C%E7%9B%B8%E5%AF%B9).assets/1575645261924.png)
+
+        -   分解：
+
+        -   >   `request.getScheme()` //返回 `http`
+
+        -   >   `request.getServerName()` // `localhost`
+
+        -   >   `request.getServerPort()` // `8080,端口`
+
+        -   >   `request.getContextPath()` // `/myServlet1`，项目名或虚拟项目名
+
+        -   >   `request.getServletPath()` // `/index.jsp `，当前servlet名或资源名
+
+    -   用法：
+
+        -   ```jsp
+            String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath()+"/";
+            ```
+
+        -   ```jsp
+            <base href="<%=basePath%>" />
+            ```
+
+        -   ```
+            <a href="index.jsp">直接写相对项目的资源路径即可</a>
+            ```
+
+            
+
+            <base> 标签为页面上的所有链接规定默认地址或默认目标。
+
+            通常情况下，浏览器会从当前文档的 URL 中提取相应的元素来填写相对 URL 中的空白。
+
+            使用 <base> 标签可以改变这一点。浏览器随后将不再使用当前文档的 URL，而使用指定的基本 URL 来解析所有的相对  URL。这其中包括 <a>、<img>、<link>、<form> 标签中的 URL。
+
+    ---
+
+    -   获取磁盘的绝对路径：
+
+        -   ```java
+            request.getRealPath("index.jsp")
+            ```
+
+            ![1575646101507](jsp%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98(%E7%BB%9D%E5%AF%B9%E5%92%8C%E7%9B%B8%E5%AF%B9).assets/1575646101507.png)
+
